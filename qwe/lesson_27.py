@@ -13,7 +13,7 @@ for xod in range(n):
         else: peta += cards[right]
         right -= 1
 
-print(sasha, peta)
+print(f"Счёт: {sasha, peta}")
 if sasha > peta: print("Саша")
 elif peta > sasha: print("Петя")
 else: print("Ничья!")
