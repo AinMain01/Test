@@ -32,7 +32,7 @@ class Hero:
 # hero_2.make_damage(hero_1)
 # hero_1.get_status()
 
-import random
+from random import randint as rd
 
 class Archer:
     def __init__(self, name="", healf=100, damage=1, metcost=0.1, lovk=1):
@@ -43,36 +43,40 @@ class Archer:
         print("______________________________________")
 
     def level_up(self):
-        if self.metcost +0.05 > 2:
-            self.metcost = 2
-            self.healf += 10
-            self.damage +=6
-            print(f"Достигнут лимит Меткости: {self.metcost}!")
-            print("Левел повышен!")
-            print("______________________________________")
-        elif self.lovk +2 > 25:
-            self.lovk = 25
-            self.healf += 10
-            self.damage +=6
-            print(f"Достигнут лимит Ловкости: {self.lovk}!")
-            print("Левел повышен!")
-            print("______________________________________")
-        else:
-            self.healf += 10
-            self.damage +=6
+        self.healf += 10
+        self.damage +=6
+        if self.metcost +0.05 < 2:
             self.metcost += 0.05
-            self.lovk += 2
-            print("Левел повышен!")
+        else:
+            print(f"Достигнут лимит Меткости: {self.metcost}!")
             print("______________________________________")
+
+        if self.lovk +2 < 25:
+            self.lovk += 2
+        else:
+            print(f"Достигнут лимит Ловкости: {self.lovk}!")
+            print("______________________________________")
+        print("Левел повышен!")
+        print("______________________________________")
 
     def make_damage(self, enemy):
         print(f"Атака по персонажу {enemy.name}!")
         print("______________________________________")
-        enemy.get_damage(self.damage)
+        enemy.get_damage(self.damage *self.metcost)
     
-    def get_damage(self, lovk):
-        
-
-        print(f"По герою {self.name} нанесён урон {final_damage}")
-        self.healf -= final_damage
+    def get_damage(self, damage):
+        chance_damage = rd(1, 100)
+        if self.lovk >= chance_damage: print(f"Лучник {self.name} увернулся от удара!")
+        else:
+            print(f"По герою {self.name} нанесён урон {damage}!")
+            self.healf -= damage
         print("______________________________________")
+
+archer_1 = Archer(name="Артур", damage=5, metcost=0.06)
+archer_2 = Archer("Робин", 80, 30, 2, 25)
+archer_2.get_status()
+# archer_1.level_up()
+# archer_1.get_status()
+
+archer_1.make_damage(archer_2)
+archer_2.get_status()
