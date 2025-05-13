@@ -14,8 +14,8 @@ def random_color_and_place():
     btn_width = button.winfo_width()
     btn_height = button.winfo_height()
 
-    max_x = max(0, window_width - btn_width)
-    max_y = max(0, window_height - btn_height)
+    max_x = window_width - btn_width
+    max_y = window_height - btn_height
 
     new_x = randint(0, max_x)
     new_y = randint(0, max_y)
