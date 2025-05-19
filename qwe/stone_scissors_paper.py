@@ -1,5 +1,5 @@
 from random import choice
-from tkinter import Tk, Button, Label
+from tkinter import *
 
 class Game:
     def __init__(self):
@@ -45,7 +45,7 @@ class GUI:
         self.lb_1 = Label(window, text="Начало игры!", font=("Arial", 20))
         self.lb_1.grid(row=1, column=0, columnspan=3)
 
-        self.lb_2 = Label(window, justify="left", text=self.game.show_info() ,font=("Arial", 13))
+        self.lb_2 = Label(window, justify="left", text=self.game.show_info(), font=("Arial", 13))
         self.lb_2.grid(row=0, column=0)
 
     def button_click(self, user_choice):
