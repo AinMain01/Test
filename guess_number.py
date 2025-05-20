@@ -42,7 +42,7 @@ class GUI:
         self.window.mainloop()
 
     def start_UI(self, window):
-        for c in range(4): window.columnconfigure(index=c, weight=2)
+        for c in range(4): window.columnconfigure(index=c, weight=1)
         for r in range(3): window.rowconfigure(index=r, weight=1)
 
         self.lb_1 = Label(window, text="Угадай число от 1 до 100:", font=("Arial", 20))
