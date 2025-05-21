@@ -64,4 +64,5 @@ class GUI:
         self.lb_3["text"] = self.game.move_result(user_choice)
         self.lb_2["text"] = self.game.show_info()
 
-app = GUI()
+if __name__ == "main":
+    app = GUI()
