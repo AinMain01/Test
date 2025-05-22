@@ -19,7 +19,7 @@ class Game:
             elif int(val) == self.pc_choice:
                 self.attempt += 1
                 n = self.attempt
-                self.r+eset_game()
+                self.reset_game()
                 return f"Ваше число - {val}. Вы угадали за {n} попыток!"
             if int(val) < self.pc_choice:
                 self.attempt += 1
