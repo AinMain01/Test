@@ -19,7 +19,7 @@ class Game:
             elif int(val) == self.pc_choice:
                 self.attempt += 1
                 n = self.attempt
-                self.reset_game()
+                self.r+eset_game()
                 return f"Ваше число - {val}. Вы угадали за {n} попыток!"
             if int(val) < self.pc_choice:
                 self.attempt += 1
@@ -64,5 +64,5 @@ class GUI:
         self.lb_3["text"] = self.game.move_result(user_choice)
         self.lb_2["text"] = self.game.show_info()
 
-if __name__ == "main":
-    app = GUI()
+
+app = GUI()
